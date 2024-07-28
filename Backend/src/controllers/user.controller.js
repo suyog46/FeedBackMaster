@@ -1,3 +1,4 @@
+
 import { ApiError } from "../utils/ApiError.js";
 import { asyncHandler } from "../utils/asyncHandler.js";
 import { User} from "../models/user.model.js"
@@ -25,7 +26,8 @@ const avatarLocalPath = req.files?.avatar[0]?.path;
 if(!avatarLocalPath){
     throw new ApiError(400,"Avatar file is required")
 }
-
+/*?.: This is the optional chaining operator. It is used to safely access nested properties,
+ ensuring that if any part of the chain is undefined or null, it will short-circuit and return undefined instead of throwing an error.*/
 const avatar = await uploadOnCloudinary(avatarLocalPath)
 
 console.log("register controller ma aako ",email,username)
