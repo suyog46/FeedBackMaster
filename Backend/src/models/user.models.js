@@ -6,7 +6,7 @@ tes paxi model export garni in the basis of schema
 */
 import mongoose from "mongoose";
 import bcrypt from "bcrypt";
-const userSchema= new  mongoose.schema(
+const userSchema= new mongoose.Schema(   //capital s
     {
         username:{
             type:String,
@@ -101,4 +101,5 @@ userSchema.methods.generateRefreshToken=function(){
 bcrypt and bcrypt js are generally used ..almost same 
  npm i bcrypt jsonwebtoken
 */
-export default User=mongoose.model("user",userSchema);
+const User=mongoose.model("user",userSchema);
+export default User;

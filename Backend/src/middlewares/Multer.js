@@ -1,9 +1,10 @@
-const multer=require('multer');
-const path=require('path');
+// const multer=require('multer'); this is an es module so use import instead of require 
+
+import multer from 'multer';
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, "./public/temp")
+      cb(null, "/public/temp")
     },
     filename: function (req, file, cb) {
       

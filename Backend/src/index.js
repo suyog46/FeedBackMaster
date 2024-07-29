@@ -1,13 +1,13 @@
-import { app } from "./app.js"
 import dotenv from "dotenv"
+
+dotenv.config({
+    path:"./.env"
+});
+import { app } from "./app.js"
 import connectDB from "./db/index.js";
 
 
 console.log("hello");
-
-dotenv.config({
-    path:"./.env"
-})
 
 const port=process.env.PORT || 3002
 

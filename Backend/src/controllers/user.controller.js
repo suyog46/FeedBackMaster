@@ -1,7 +1,8 @@
 
 import { ApiError } from "../utils/ApiError.js";
 import { asyncHandler } from "../utils/asyncHandler.js";
-import { User} from "../models/user.model.js"
+import  User from "../models/user.models.js"
+//uta bata default ma export garexa vani dont use curly braces
 import {uploadOnCloudinary} from "../utils/Cloudinary.js"
 import { ApiResponse } from "../utils/ApiResponse.js"; 
 const registerUser= asyncHandler(async (req,res)=>{
@@ -35,6 +36,7 @@ const avatar = await uploadOnCloudinary(avatarLocalPath)
 
 
 //to push the user data in the db
+console.log(avatar);
 const user =await User.create({
     username,
     avatar:avatar.url,
